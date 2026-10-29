@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Para Ketlyn 🌹</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Tela inicial: o clique libera a música (navegadores bloqueiam autoplay) -->
+    <div id="intro">
+        <button id="start">Toque para abrir 💌</button>
+    </div>
+
+    <main id="scene">
+        <svg id="bouquet" viewBox="0 0 400 600" aria-label="Buquê de flores"></svg>
+        <div id="text">
+            <h1 id="title">Para você, Meu bis de limâo</h1>
+            <p id="subtitle">Cada flor é um pedacinho do que sinto por você ❤️</p>
+        </div>
+    </main>
+
+    <audio id="music" src="musica.mp3" loop></audio>
+    <button id="mute" aria-label="Som">🔊</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

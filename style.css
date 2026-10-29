@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: radial-gradient(circle at 50% 30%, #3a0a1a 0%, #14030a 80%);
+  color: #ffd9e0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#scene {
+  height: 100vh;
+  height: 100dvh; /* altura real da tela no celular */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+}
+
+#bouquet {
+  height: 62vh;
+  height: 58dvh;
+  max-width: 90vw;
+  overflow: visible;
+  flex-shrink: 1;
+  min-height: 0;
+}
+
+#text { padding: 0 8px; }
+
+#title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 10vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #ff8fa3;
+  margin-top: 8px;
+  text-shadow: 0 0 20px rgba(255, 80, 110, .5);
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#subtitle {
+  margin-top: 8px;
+  font-size: clamp(.9rem, 3.8vw, 1.2rem);
+  line-height: 1.4;
+  opacity: .9;
+  text-wrap: balance;
+}
+
+/* Tela inicial */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: #14030a;
+}
+
+#start {
+  width: min(80vw, 320px);
+  padding: 16px 24px;
+  font: 500 1.1rem 'Quicksand', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #e63950, #a3112a);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(230, 57, 80, .6);
+}
+
+/* Botão de som com área de toque confortável (44px) */
+#mute {
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  background: rgba(0, 0, 0, .3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Pétalas caindo */
+.petal {
+  position: fixed;
+  top: -30px;
+  width: 14px;
+  height: 18px;
+  background: #e63950;
+  border-radius: 100% 0 100% 0;
+  opacity: .8;
+  pointer-events: none;
+}
+
+.flower { filter: drop-shadow(0 0 6px rgba(100, 160, 255, .35)); }
+
+/* Celular deitado: buquê de um lado, texto do outro */
+@media (orientation: landscape) and (max-height: 500px) {
+  #scene {
+    flex-direction: row;
+    gap: 32px;
+  }
+  #bouquet {
+    height: 88vh;
+    height: 88dvh;
+  }
+  #text { max-width: 45vw; }
+  #title { font-size: clamp(2rem, 6vw, 3.5rem); }
+}
